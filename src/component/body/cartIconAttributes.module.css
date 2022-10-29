@@ -1,0 +1,43 @@
+.attr__container {
+  list-style-type: none;
+}
+
+.attr__name {
+  margin: 8px 0 8px;
+  font-weight: 400;
+  font-size: 13.5px;
+  line-height: 16px;
+}
+
+.attr__type {
+  display: flex;
+  list-style-type: none;
+  column-gap: 8px;
+}
+
+.attr__swatchType {
+  width: 16px;
+  height: 16px;
+  outline-offset: 1px;
+}
+
+.attr__swatchType__active {
+  outline: 1px solid #5ece7b;
+}
+
+.attr__textType {
+  min-width: 24px;
+  height: 24px;
+  font-size: 14px;
+  line-height: 160%;
+  font-weight: 400;
+  text-align: center;
+  border: 1px solid #1d1f22;
+  font-family: "Source Sans Pro";
+  font-style: normal;
+}
+
+.attr__textType__active {
+  background-color: #1d1f22;
+  color: white;
+}

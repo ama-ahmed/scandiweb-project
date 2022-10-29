@@ -1,0 +1,115 @@
+.section__productPage {
+  position: relative;
+  display: flex;
+  padding-top: 160px;
+}
+
+.outOfStock {
+  opacity: 0.5;
+  cursor: not-allowed !important;
+}
+
+.ul__img {
+  height: 511px;
+  min-width: 79px;
+  list-style-type: none;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  row-gap: 40px;
+}
+
+.ul__img::-webkit-scrollbar {
+  display: none;
+}
+
+.li__img {
+  width: 79px;
+  height: 80px;
+  cursor: pointer;
+}
+
+.img__product {
+  width: 79px;
+  height: 80px;
+  object-fit: contain;
+}
+
+.div__preview {
+  position: relative;
+  height: 511px;
+}
+
+.img__main {
+  margin: 0 100px 0 40px;
+  width: 610px;
+  height: 511px;
+  object-fit: contain;
+}
+
+.p__outOfStock {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 38.4px;
+}
+
+.div__details {
+  display: flex;
+  flex-direction: column;
+}
+
+.p__brand {
+  margin-bottom: 16px;
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 27px;
+}
+
+.p__name {
+  margin-bottom: 20px;
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 27px;
+}
+
+.p__price {
+  margin: 36px 0 10px;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 18px;
+}
+
+.p__priceValue {
+  margin-bottom: 20px;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 18px;
+}
+
+.cartButton {
+  margin-bottom: 40px;
+  height: 52px;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 120%;
+  color: #fff;
+  background-color: #5ece7b;
+  border: none;
+  cursor: pointer;
+}
+
+.cartButton__outOfStock {
+  cursor: not-allowed;
+}
+
+.p__description :first-child {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 160%;
+}

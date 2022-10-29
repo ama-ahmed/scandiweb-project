@@ -1,0 +1,15 @@
+.h2__Product {
+  line-height: 160%;
+  margin-bottom: 103px;
+  padding-top: 160px;
+  font-size: 42px;
+  font-weight: 400;
+}
+
+.ul__Product{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 40px;
+  list-style-type: none;
+  padding-bottom: 150px;
+}

@@ -1,0 +1,47 @@
+.attr__container {
+  list-style-type: none;
+}
+
+.attr__name {
+  margin: 20px 0 7px;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 18px;
+  font-family: "Roboto Condensed";
+}
+
+.attr__type {
+  display: flex;
+  list-style-type: none;
+  column-gap: 8px;
+}
+
+.attr__swatchType {
+  width: 32px;
+  height: 32px;
+  outline-offset: 1px;
+  cursor: pointer;
+}
+
+.attr__swatchType__active {
+  outline: 1px solid #5ece7b;
+}
+
+.attr__textType {
+  width: 63px;
+  height: 45px;
+  font-size: 16px;
+  line-height: 40px;
+  cursor: pointer;
+  font-weight: 400;
+  text-align: center;
+  border: 1px solid #1d1f22;
+  letter-spacing: 0.05em;
+  font-family: "Source Sans Pro";
+  font-style: normal;
+}
+
+.attr__textType__active {
+  background-color: #1d1f22;
+  color: white;
+}

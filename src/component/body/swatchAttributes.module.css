@@ -1,0 +1,18 @@
+.attr__type {
+  display: flex;
+  gap: 12px;
+  list-style-type: none;
+}
+
+.attr__swatchType {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  outline-offset: 2px;
+  cursor: default;
+}
+
+.attr__swatchType__active{
+  outline: 1px solid #5ece7b;
+}
+

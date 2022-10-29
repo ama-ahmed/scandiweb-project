@@ -1,0 +1,48 @@
+.cardPage__container {
+  padding-top: 160px;
+}
+
+.cardPage__title {
+  margin-bottom: 55px;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 40px;
+}
+
+.cartPage__itemDetails {
+  margin-bottom: 32px;
+  list-style-type: none;
+}
+
+.cartPage__taxAndQuantity {
+  margin-bottom: 8px;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 28px;
+}
+
+.cartPage__taxAmountAndQuantity {
+  margin-bottom: 8px;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 28px;
+}
+
+.cartPage__totalPrice {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 28px;
+}
+
+.cartPage__orderButton {
+  margin: 16px 0 274px 0;
+  width: 279px;
+  height: 43px;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 120%;
+  color: white;
+  background-color: #5ece7b;
+  border: none;
+  cursor: pointer;
+}

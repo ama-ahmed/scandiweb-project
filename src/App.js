@@ -1,25 +1,61 @@
-import logo from './logo.svg';
-import './App.css';
+import { Component } from "react";
+import ApolloClient, { InMemoryCache } from "apollo-boost";
+import { ApolloProvider } from "react-apollo";
+import { Route, Switch, Redirect } from "react-router-dom";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import Header from "./component/header/header";
+import Category from "./component/body/product";
+import ProductPage from "./component/body/productPage";
+import CardPage from "./component/body/cardPage";
+
+export const client = new ApolloClient({
+  uri: "https://scandiweb-end-point.herokuapp.com/",
+  cache: new InMemoryCache({
+    dataIdFromObject: (o) => (o._id ? `${o.__typename}:${o._id}` : null),
+  }),
+});
+
+class App extends Component {
+  render() {
+    return (
+      <ApolloProvider client={client}>
+        <>
+          <Header />
+          <Switch>
+            <Route
+              exact
+              path="/category/:category"
+              render={(props) => (
+                <Category
+                  path={props.match.params.category}
+                  historyPush={props.history.push}
+                />
+              )}
+            />
+
+            <Route
+              exact
+              path="/category/:category/:id"
+              render={(props) => (
+                <ProductPage
+                  path={props.match.params.id}
+                  historyPush={props.history.push}
+                />
+              )}
+            />
+
+            <Route exact path="/cart">
+              <CardPage />
+            </Route>
+
+            <Route path="*">
+              <Redirect to="/category/all" />
+            </Route>
+          </Switch>
+        </>
+      </ApolloProvider>
+    );
+  }
 }
 
 export default App;
