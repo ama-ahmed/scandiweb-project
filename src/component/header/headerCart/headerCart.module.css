@@ -38,7 +38,7 @@
   background-color: #fff;
   width: 325px;
   height: 677px;
-  margin-top: 27px;
+  margin-top: 28px;
   padding: 32px 16px;
   cursor: default;
   display: flex;
@@ -119,5 +119,12 @@
 @media (max-width: 900px) {
   .cart__itemsList {
     right: -22px;
+  }
+}
+
+@media (max-height: 770px) {
+  .cart__itemsList {
+    height: 500px;
+    overflow: auto;
   }
 }
