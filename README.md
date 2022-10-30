@@ -1,2 +1,2 @@
 Live Demo<br>
-[http://localhost:3000](http://localhost:3000)
+[https://scandiweb-ama.vercel.app/](https://scandiweb-ama.vercel.app/)
