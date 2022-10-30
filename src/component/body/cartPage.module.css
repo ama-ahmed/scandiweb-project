@@ -46,3 +46,9 @@
   border: none;
   cursor: pointer;
 }
+
+@media (max-width: 570px) {
+  .cartPage__orderButton{
+    width: 100%;
+  }
+}
