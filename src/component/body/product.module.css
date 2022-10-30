@@ -13,3 +13,22 @@
   list-style-type: none;
   padding-bottom: 150px;
 }
+
+@media (max-width: 1024px) {
+  .ul__Product{
+    grid-gap: 20px;
+  }
+}
+
+@media (max-width: 900px) {
+  .ul__Product{
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 540px) {
+  .ul__Product{
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: 40px;
+  }
+}

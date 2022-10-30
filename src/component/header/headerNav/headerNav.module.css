@@ -22,3 +22,9 @@
   font-weight: 600;
   line-height: 120%;
 }
+
+@media (max-width: 450px) {
+  .navLink {
+    padding: 4px 0px 32px 10px;
+  }
+}
