@@ -18,7 +18,7 @@ class productCart extends Component {
   }
 
   changeQuantity(operator) {
-    const { id, attributes, attributesValue } = this.props;
+    const { id, attributesValue } = this.props;
     const currentProducts = [...this.props.products];
 
     currentProducts.forEach((currentProduct, index) => {
@@ -89,7 +89,7 @@ class productCart extends Component {
           <p className={classes.productCart__name}>{name}</p>
           <p className={classes.productCart__price}>
             {currentCurrency}
-            {itemPrice.amount}
+            {itemPrice.amount.toFixed(2)}
           </p>
 
           <Attributes
@@ -120,6 +120,7 @@ class productCart extends Component {
           <img
             className={classes.productCart__img}
             src={gallery[this.state.imgIndex]}
+            alt="current product img"
           />
           {pageType === "page" && gallery.length > 1 && (
             <>

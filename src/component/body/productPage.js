@@ -3,6 +3,8 @@ import { Component } from "react";
 import gql from "graphql-tag";
 import { client } from "../../App";
 import { addToCart } from "../../store/cartSlice";
+// import { Markup } from "interweave";
+import parse from 'html-react-parser';
 
 import classes from "./productPage.module.css";
 import Attributes from "./attributes";
@@ -36,8 +38,6 @@ const myQuery = gql`
     }
   }
 `;
-
-
 
 class ProductPage extends Component {
   product = {};
@@ -152,16 +152,8 @@ class ProductPage extends Component {
   };
 
   render() {
-    const {
-      id,
-      name,
-      brand,
-      gallery,
-      attributes,
-      prices,
-      inStock,
-      description,
-    } = this.product;
+    const { name, brand, gallery, attributes, prices, inStock, description } =
+      this.product;
 
     const { currentCurrency } = this.props;
 
@@ -180,6 +172,7 @@ class ProductPage extends Component {
           {gallery?.map((image, index) => (
             <li className={classes.li__img} key={index}>
               <img
+                alt="other img for product"
                 className={classes.img__product}
                 src={image}
                 onClick={this.changeImage}
@@ -191,6 +184,7 @@ class ProductPage extends Component {
         <div className={classes.div__preview}>
           {gallery && (
             <img
+              alt="product current img"
               className={classes.img__main}
               src={currentImage || gallery[0]}
             />
@@ -211,7 +205,7 @@ class ProductPage extends Component {
           <p className={classes.p__price}>Price:</p>
           <p className={classes.p__priceValue}>
             {currentCurrency}
-            {itemPrice?.amount}
+            {itemPrice?.amount.toFixed(2)}
           </p>
           <button
             className={`${classes.cartButton} ${
@@ -222,18 +216,19 @@ class ProductPage extends Component {
             ADD TO CART
           </button>
 
-          <p
-            className={classes.p__description}
-            dangerouslySetInnerHTML={{
-              __html: description,
-            }}
-          />
+          <div className={`${classes.p__description} productPage-description`}>
+            {/* method one */}
+            {/* {document.querySelector('.productPage-description')?.insertAdjacentHTML('beforeend', description)} */}
+            {/* method two */}
+            {/* <Markup content={description} /> */}
+            {/* method three */}
+            {parse(`${description}`)}
+          </div>
         </div>
       </section>
     );
   }
 }
-
 
 const mapStateToProps = (state) => ({
   currentCurrency: state.cart.currentCurrency,

@@ -5,7 +5,7 @@ import classescartIconType from "./cartIconAttributes.module.css";
 
 class Attributes extends Component {
   activeClasse(value, name, attributesValue) {
-    return attributesValue.some(
+    return attributesValue?.some(
       (attribute) =>
         Object.keys(attribute)[0] === name &&
         Object.values(attribute)[0] === value

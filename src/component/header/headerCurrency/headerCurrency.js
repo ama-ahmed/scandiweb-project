@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import gql from "graphql-tag";
 import { client } from "../../../App";
 import { setCurrency } from "../../../store/cartSlice";
+import Transition from "react-transition-group/Transition";
 
 import { ReactComponent as ArrowSvg } from "../../../icons/arrow.svg";
 import classes from "./headerCurrency.module.css";
@@ -60,22 +61,34 @@ class HeaderCurrency extends Component {
             open && classes.currency__arrow__open
           }`}
         />
-        {open && (
-          <>
-            <div className={classes.currencies__overlay} />
-            <ul className={classes.currency__ul}>
-              {currencies.map(({ label, symbol }, index) => (
-                <li
-                  className={classes.currency__value}
-                  key={index}
-                  onClick={this.changeCurrency}
-                >
-                  {symbol} {label}
-                </li>
-              ))}
-            </ul>
-          </>
-        )}
+        {/* {open && ( */}
+        <Transition in={open} timeout={500} mountOnEnter unmountOnExit>
+          {(state) => (
+            <>
+              <div className={classes.currencies__overlay} />
+              <ul
+                className={`${classes.currency__ul} ${
+                  state === "entering"
+                    ? classes.openHeaderCurrency
+                    : state === "exiting"
+                    ? classes.closeHeaderCurrency
+                    : null
+                }`}
+              >
+                {currencies.map(({ label, symbol }, index) => (
+                  <li
+                    className={classes.currency__value}
+                    key={index}
+                    onClick={this.changeCurrency}
+                  >
+                    {symbol} {label}
+                  </li>
+                ))}
+              </ul>
+            </>
+          )}
+        </Transition>
+        {/* )} */}
       </div>
     );
   }

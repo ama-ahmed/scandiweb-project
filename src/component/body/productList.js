@@ -129,14 +129,14 @@ export class ProductList extends Component {
           !inStock && classes.outOfStock
         }`}
       >
-        <a
-          onClick={(event) => inStock && this.navigateToItemPage(event, id)}
+        <div
+          onClick={(event) => this.navigateToItemPage(event, id)}
           className={`${classes.link__productList} ${
             !inStock && classes.outOfStock
           }`}
         >
-          <div style={{ position: "relative" }}>
-            <img src={gallery[0]} className={classes.img__productList} />
+          <div className={classes.img__container__productList}>
+            <img src={gallery[0]} className={classes.img__productList} alt="product img"/>
             {!inStock && <p className={classes.p__outOfStock}>OUT OF STOCK</p>}
 
             <CartButton
@@ -154,14 +154,14 @@ export class ProductList extends Component {
           <div className={classes.p__price}>
             <p>
               {currentCurrency}
-              {itemPrice.amount}
+              {itemPrice.amount.toFixed(2)}
             </p>
             <SwatchAttributes
               attributes={attributes}
               attributesValue={this.state.attributes}
             />
           </div>
-        </a>
+        </div>
       </li>
     );
   }

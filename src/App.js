@@ -9,7 +9,7 @@ import ProductPage from "./component/body/productPage";
 import CardPage from "./component/body/cardPage";
 
 export const client = new ApolloClient({
-  uri: "https://scandiweb-end-point.herokuapp.com/",
+  uri: "https://scandiweb-end-point.up.railway.app/",
   cache: new InMemoryCache({
     dataIdFromObject: (o) => (o._id ? `${o.__typename}:${o._id}` : null),
   }),

@@ -106,10 +106,17 @@
   cursor: not-allowed;
 }
 
-.p__description :first-child {
+.p__description  *{
   font-family: "Roboto";
   font-style: normal;
-  font-weight: 400;
+  /* font-weight: 400; */
+  font-size: 16px;
+  line-height: 160%;
+}
+
+.p__description{
+  font-family: "Roboto";
+  font-style: normal;
   font-size: 16px;
   line-height: 160%;
 }
@@ -148,9 +155,12 @@
   .div__preview {
     text-align: center;
   }
+
   .p__description{
-    position: absolute;
-    bottom: 105px;
+    /* position: absolute;
+    bottom: 105px; */
+    padding-left: 20px;
+    padding-right: 20px;
   }
 
   .p__priceValue {

@@ -2,6 +2,7 @@
   width: 26.8vw;
   max-width: 386px;
   padding-bottom: 16px;
+  transition: box-shadow 0.5s;
 }
 
 .li__productList:hover {
@@ -10,7 +11,7 @@
 
 .outOfStock {
   opacity: 0.5;
-  cursor: not-allowed !important;
+  /* cursor: not-allowed !important; */
 }
 
 .link__productList {
@@ -22,6 +23,10 @@
   max-height: 444px;
   padding: 16px;
   cursor: pointer;
+}
+
+.img__container__productList {
+  position: relative;
 }
 
 .img__productList {
